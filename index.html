@@ -1,1 +1,142 @@
-Hello World
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Minutta iPhone app coming soon in 2014!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="http://minutta.com/css/normalize.css">
+        <link rel="stylesheet" href="http://minutta.com/css/main.css">
+        <link rel="stylesheet/less" type="text/css" href="http://minutta.com/css/styles.less">
+        <script src="http://minutta.com/js/vendor/less.js" type="text/javascript"></script>       
+        <script src="http://minutta.com/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+    	<a class="next-s" href="#second">NEXT</a>
+    	<a class="prev-s">PREV</a>
+    	
+    	<div class="viewport scrollable">
+	    	<section class="overlay">
+		    	<div class="logo-i hided"></div>
+		    	<div class="logo-s hided"></div>
+		    	<div class="logo-f hided"></div>
+		    	<div class="iphone ip-land ip-hided">
+			    	<em></em>
+			    	<div class="screen"></div>
+			    	<div class="sub-screen"></div>
+			    	<i class="card c00 c-main"></i>
+			    	<i class="card c01 c-third"></i>
+			    	<i class="card c1 p0"></i>
+			    	<i class="card c2 pm1"></i>
+			    	<i class="card c3 pm2"></i>
+		    	</div>
+		    	<div class="pager">
+			    	<a href="#first" id="first-t" class="active"></a>
+			    	<a href="#second" id="second-t"></a>
+			    	<a href="#third" id="third-t"></a>
+		    	</div>
+	    	</section> 
+	    	<section class="page first visible hided" id="first">
+		    	<div class="sign">
+			    	<span class="line1 hided">
+				    	Share Your
+				    	<i class="p hided">P</i>
+				    	<i class="h hided">h</i>
+				    	<i class="o hided">o</i>
+				    	<i class="t hided">t</i>
+				    	<i class="o2 hided">o</i>
+				    	<i class="s hided">s</i>
+			    	</span>
+			    	<span class="line2 hided">
+			    		Tell Your
+			    		<i class="s2 hided">S</i>
+				    	<i class="t2 hided">t</i>
+				    	<i class="o3 hided">o</i>
+				    	<i class="r hided">r</i>
+				    	<i class="y hided">y</i>
+			    	</span>
+			    	<div class="form first-form hided">
+			    		<input type="email" id="mail1" placeholder="Be the first to get it">
+			    		<a class="btn submit">Send</a>
+			    	</div>
+			    	<div class="coming hided">
+			    		Coming spring 2014
+			    	</div>
+		    	</div>
+		    	<div class="scroll-down hided">
+			    	Scroll down to learn more
+		    	</div>
+	    	</section>
+	    	<section class="page second hided" id="second">
+		    	<div class="sign">
+			    	<span class="hided">Use pictures instead of words !</span>
+			    	<div class="form second-form hided">
+			    		<input type="email" id="mail2" placeholder="Be the first to get it">
+			    		<a class="btn submit">Send</a>
+			    	</div>
+		    	</div>
+		    	<div class="slide-cap">
+			    	<p class="c1 hided">Share how much fun you're having</p>
+			    	<p class="c2 hided">Tell Mom "Wish you could make the party"</p>
+			    	<p class="c3 hided">Share images of your child with distant relatives</p>
+		    	</div>
+	    	</section>
+	    	<section class="page third hided"  id="third">
+		    	<div class="sign">
+			    	<span class="hided">
+			    		The best photo sharing app in the Galaxy
+				    	<small class="hided">Minutta iPhone app - it is private, engaging and easy as pie</small>
+			    	</span>
+			    	<div class="form third-form hided">
+			    		<input type="email" id="mail3" placeholder="Be the first to get it">
+			    		<a class="btn submit">Send</a>
+			    	</div>
+		    	</div>
+	    	</section>
+    	
+    	</div>
+    	    	    	
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="http://minutta.com/js/vendor/jquery.preload.min.js"></script>
+        <script src="http://minutta.com/js/vendor/jquery.mousewheel.js"></script>
+        <script src="http://minutta.com/js/vendor/jquery.touchSwipe.min.js"></script>
+        <script src="http://minutta.com/js/plugins.js"></script>
+        <script src="http://minutta.com/js/main.js"></script>
+    </body>
+<script>
+  $('.submit').click(function(e) {
+    e.preventDefault();
+    var email = $('#mail1').val();
+    if (email == '') {
+      email = $('#mail2').val();
+      if (email == '') {
+        email = $('#mail3').val();
+      }
+    }
+    if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/.test(email.toUpperCase())) {
+      $.post( "http://new.minutta.com/promo.php?add=1&email=" + email, function( data ) {
+	alert('Thanks for signing up, we will announce Minutta release in App Store soon.')
+      });
+    } else {
+      alert('Invalid email');
+    }
+  });
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48633000-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</html>
